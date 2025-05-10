@@ -10,15 +10,31 @@ button {
 }
 
 #game {
-    
-        width : 300px;
-        height : 500px;
-        border : 1px solid black;
-        margin : auto;
-        box-sizing : border-box;
-        background : url('road.png') no-repeat center center;
-        background-size : cover 
+    width: 300px;
+    height: 500px;
+    border: 1px solid black;
+    margin: auto;
+    box-sizing: border-box;
+    overflow: hidden;
+    background: repeating-linear-gradient(
+        to bottom,
+        #555 0px,
+        #555 40px,
+        #444 40px,
+        #444 80px
+    );
+    animation: roadScroll 1s linear infinite;
 }
+
+@keyframes roadScroll {
+    0% {
+        background-position-y: 0;
+    }
+    100% {
+        background-position-y: 80px;
+    }
+}
+
 
 #character {
     width: 100px;
